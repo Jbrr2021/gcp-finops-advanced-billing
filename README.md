@@ -4,7 +4,7 @@
 
 Bem-vindo ao meu repositório de nível intermediário/avançado! Após consolidar a minha base essencial de sintaxe SQL, decidi elevar o nível dos meus laboratórios para replicar exatamente os desafios de produção que os engenheiros enfrentam no dia a dia.
 
-Nesta biblioteca pessoal, abandonei as tabelas didáticas e passei a trabalhar diretamente com o **Schema oficial e bruto de exportação do Google Cloud Billing (Standard Usage Cost)**.
+Nesta biblioteca pessoal, abandonei as tabelas didáticas e passei a trabalhar diretamente com o **Schema oficial e brute de exportação do Google Cloud Billing (Standard Usage Cost)**.
 
 ## 📊 A Realidade dos Dados Brutos
 Os provedores de nuvem geram dados massivos em formatos aninhados e repetidos. Para simular esse cenário, estruturei o dataset `custos_nuvem_bruto_gcp` utilizando tipos de dados complexos do Google BigQuery:
@@ -27,7 +27,10 @@ Os provedores de nuvem geram dados massivos em formatos aninhados e repetidos. P
 ### 🔍 4. Auditoria de Recursos por Nomenclatura e Região
 *   `auditoria_regioes_gcp_filtro_like.sql`: **Pedido do Gestor:** Identificar quais recursos analíticos e servidores pertencem especificamente à região dos Estados Unidos para validação de compliance. Uso do operador de busca parcial `LIKE` com o caractere curinga `%` aplicado ao campo aninhado da localização global.
 
+### 🧠 5. Inteligência Dinâmica com Subconsultas
+*   `auditoria_custos_acima_da_media_global_subquery.sql`: **Pedido do Gestor:** Isolar e priorizar os recursos de maior impacto financeiro cujos custos individuais operam acima da média de gastos de toda a empresa. Implementação de uma subquery escalar no `WHERE` para calcular a linha de corte de forma totalmente dinâmica e adaptável.
+
 ## 🧠 Evolução Profissional
-Dominar a manipulação e desaninhamento de estruturas complexas no BigQuery consolida a minha autonomia para lidar com grandes volumetrias de dados (Big Data) e pipelines reais de governança de dados na nuvem.
+Dominar a manipulação, desaninhamento e aninhamento de consultas complexas no BigQuery consolida a minha autonomia para lidar com grandes volumetrias de dados (Big Data) e pipelines reais de governança de dados na nuvem.
 
 
